@@ -1,0 +1,16 @@
+ooos basic code 
+day 1 
+class Student{
+    int rollnumber;
+    String name;
+}
+public class Main {
+    public static void main(String[] args) {
+        Student obj = new Student();
+        obj.rollnumber = 1;
+        obj.name = "Anviksha";
+        
+        System.out.println(obj.rollnumber);
+        System.out.println(obj.name);
+    }
+}
