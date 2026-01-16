@@ -1,0 +1,45 @@
+Code 2 constructor 
+class Student{
+    int rollnumber;
+    String name;
+
+Student(int i, String n)
+{
+    rollnumber = i;
+    name = n;
+}
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student obj = new Student(1,"anvi");
+        obj.rollnumber = 1;
+        obj.name = "Anviksha";
+        
+        System.out.println(obj.rollnumber);
+        System.out.println(obj.name);
+    }
+}
+
+code 3 attributes 
+
+class Student{
+    
+    int rollnumber;//instance variable
+
+void setId(int rollnumber)//local variable
+{
+    this.rollnumber =  rollnumber;
+}
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student obj = new Student();
+       obj.setId(1);
+     
+        
+        System.out.println(obj.rollnumber);
+     
+    }
+}
