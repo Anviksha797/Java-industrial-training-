@@ -1,0 +1,87 @@
+Attributes (self vs local variables)
+❌ WRONG CODE (Local Variable Used Instead of Instance Variable)
+class Student {
+
+    int marks;   // instance variable
+
+    void setMarks(int marks) {
+        marks = marks;   // ❌ local variable assigned to itself
+    }
+
+    void display() {
+        System.out.println("Marks = " + marks);
+    }
+
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.setMarks(90);
+        s.display();   // Output: Marks = 0
+    }
+}
+
+✅ RIGHT CODE (Instance Variable Correctly Used)
+class Student {
+
+    int marks;   // instance variable
+
+    void setMarks(int marks) {
+        this.marks = marks;   // ✅ correct assignment
+    }
+
+    void display() {
+        System.out.println("Marks = " + marks);
+    }
+
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.setMarks(90);
+        s.display();   // Output: Marks = 90
+    }
+}
+
+2. Question
+The following Java code is not working as expected. Identify the mistake and fix it.
+❌ WRONG CODE
+class Rectangle {
+
+    int length;
+    int breadth;
+
+    void setDimensions(int length, int breadth) {
+        length = length;     // ❌ local variables
+        breadth = breadth;   // ❌ local variables
+    }
+
+    int area() {
+        return length * breadth;
+    }
+
+    public static void main(String[] args) {
+        Rectangle r = new Rectangle();
+        r.setDimensions(5, 4);
+        System.out.println(r.area());   // Output: 0
+    }
+}
+✅ RIGHT CODE (Fixed)
+class Rectangle {
+
+    int length;
+    int breadth;
+
+    void setDimensions(int length, int breadth) {
+        this.length = length;     // ✅ instance variable
+        this.breadth = breadth;   // ✅ instance variable
+    }
+
+    int area() {
+        return length * breadth;
+    }
+
+    public static void main(String[] args) {
+        Rectangle r = new Rectangle();
+        r.setDimensions(5, 4);
+        System.out.println(r.area());   // Output: 20
+    }
+}
+One-Line Explanation
+Method parameters shadow instance variables; this is required to assign values to object attributes.
