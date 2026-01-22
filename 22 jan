@@ -1,0 +1,42 @@
+CODE 1
+
+class Student {
+     static String collegename = "IILM";
+     String name;//instance variable
+    
+    Student(String name){
+        this.name = name;
+    }
+    void display(){
+        System.out.println(name+" Studied at" + collegename);
+    }
+}
+public class Main
+{
+    public static void main(String args[])
+    {
+        Student s1=new Student("Aman");
+        Student s2=new Student("yash");
+        s1.display();
+        s2.display();
+        
+    }
+}
+
+CODE - 2
+
+//Static method
+class Square{
+    static int square(int num){
+        return num*num;
+    }
+}
+public class Main{
+    public static void main (String[] args) {
+    System.out.println(Square.square(5));
+}
+    
+}
+
+
+
